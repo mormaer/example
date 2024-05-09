@@ -3,7 +3,7 @@
   
 <head>  
     <title>Tiffany's example 
-    </title> 
+    </title>
 </head>  
   
 <body style = "text-align:center;" id = "body">  
@@ -18,21 +18,41 @@
 
     <p id = "FAIL_VIEW" style =  
         "font-size: 23px; font-weight: bold; color: red; "> 
-    </p> 
+    </p>
 
-    <embed src="label.pdf" type="application/pdf" height="700px" width="500">
+    <p id = "TIFF_SUCCESS_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: red; ">
+        <img src="success.jpg" alt="success" height="200">
+    </p>
+
+    <p id = "TIFF_FAILURE_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: red; ">
+        <img src="failure.jpg" alt="failure" height="200">
+    </p>
+
+    <a href="label.pdf" download>
+  		<p id = "DOWNLOAD_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: blue; "> 
+    </p> 
+	</a>
       
     <script> 
         var el_success = document.getElementById("SUCCESS_VIEW"); 
         var el_fail = document.getElementById("FAIL_VIEW");
-        
+        var el_download = document.getElementById("DOWNLOAD_VIEW");
+        var el_tiff_success = document.getElementById("TIFF_SUCCESS_VIEW");
+        var el_tiff_failure = document.getElementById("TIFF_FAILURE_VIEW");        
+
         function gfg_Run() { 
         	var success = Math.random() >= 0.5;
-            el_success.innerHTML = success ? "Traced." : "";
+            el_success.innerHTML = success ? "Traceable." : "";
             el_fail.innerHTML = success ? "" : "Untraceable.";
+            el_download.innerHTML = "Download";
+            el_tiff_success.style.display = success ? "block" : "none";
+            el_tiff_failure.style.display = success ? "none" : "block";
         }          
     </script>
     <body onload="gfg_Run()">
 </body>  
   
-</html>
+</html> 
