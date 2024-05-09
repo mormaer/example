@@ -16,18 +16,20 @@
         "font-size: 23px; font-weight: bold; color: green; "> 
     </p> 
 
-        <p id = "FAIL_VIEW" style =  
+    <p id = "FAIL_VIEW" style =  
         "font-size: 23px; font-weight: bold; color: red; "> 
     </p> 
+
+    <embed src="label.pdf" type="application/pdf" height="700px" width="500">
       
     <script> 
         var el_success = document.getElementById("SUCCESS_VIEW"); 
         var el_fail = document.getElementById("FAIL_VIEW");
-                  
+        
         function gfg_Run() { 
         	var success = Math.random() >= 0.5;
             el_success.innerHTML = success ? "Traced." : "";
-            el_fail.innerHTML = success ? "" : "Untraceable."
+            el_fail.innerHTML = success ? "" : "Untraceable.";
         }          
     </script>
     <body onload="gfg_Run()">
