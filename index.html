@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>  
+<html>  
+  
+<head>  
+    <title>Tiffany's example 
+    </title> 
+</head>  
+  
+<body style = "text-align:center;" id = "body">  
+      
+    <h1 id = "h1" style = "color:darkgrey;" >  
+        Results  
+    </h1> 
+      
+    <p id = "SUCCESS_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: green; "> 
+    </p> 
+
+        <p id = "FAIL_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: red; "> 
+    </p> 
+      
+    <script> 
+        var el_success = document.getElementById("SUCCESS_VIEW"); 
+        var el_fail = document.getElementById("FAIL_VIEW");
+                  
+        function gfg_Run() { 
+        	var success = Math.random() >= 0.5;
+            el_success.innerHTML = success ? "Success" : "";
+            el_fail.innerHTML = success ? "" : "Failure - blame Tiffany."
+        }          
+    </script>
+    <body onload="gfg_Run()">
+</body>  
+  
+</html>
