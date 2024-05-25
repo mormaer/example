@@ -2,15 +2,19 @@
 <html>  
   
 <head>  
-    <title>Tiffany's example 
+    <title>Where will you be in 30 years? 
     </title>
 </head>  
   
 <body style = "text-align:center;" id = "body">  
       
-    <h1 id = "h1" style = "color:darkgrey;" >  
-        Results  
-    </h1> 
+    <h1 id = "header" style = "color:black;" >  
+        Where will you be in 30 years?  
+    </h1>
+
+    <h3 id = "outcome" style = "color:darkgrey;" >  
+        Traceability outcome  
+    </h3> 
       
     <p id = "SUCCESS_VIEW" style =  
         "font-size: 23px; font-weight: bold; color: green; "> 
@@ -20,7 +24,17 @@
         "font-size: 23px; font-weight: bold; color: red; "> 
     </p>
 
-    <a href="label.pdf" download>
+    <a href="https://forms.office.com/pages/responsepage.aspx?id=veDvEDCgykuAnLXmdF5JmqCgL7C8hFpOpjzvYGVDxytUQllYRERaWDQ2SkxDSTY1MkI1SldUSkJFTy4u&origin=QRCode">
+  		<p id = "FORM_LINK_VIEW" style =  
+        "font-size: 23px; font-weight: bold; color: blue; "> 
+    </p> 
+	</a>
+
+	<a href="tag.jpg" download>
+  		<img src="tag.jpg" alt="tag" width="100">
+	</a>
+
+    <a href="tag.jpg" download>
   		<p id = "DOWNLOAD_VIEW" style =  
         "font-size: 23px; font-weight: bold; color: blue; "> 
     </p> 
@@ -29,16 +43,18 @@
     <script> 
         var el_success = document.getElementById("SUCCESS_VIEW"); 
         var el_fail = document.getElementById("FAIL_VIEW");
+        var el_form_link = document.getElementById("FORM_LINK_VIEW");
         var el_download = document.getElementById("DOWNLOAD_VIEW");       
 
-        function gfg_Run() { 
-        	var success = Math.random() >= 0.5;
+        function generate_trace() { 
+        	var success = Math.random() >= 0.1;
             el_success.innerHTML = success ? "Traceable." : "";
             el_fail.innerHTML = success ? "" : "Untraceable.";
-            el_download.innerHTML = "Download";
+            el_form_link.innerHTML = "Click here to answer a few short questions about traceability."
+            el_download.innerHTML = "Download Tag";
         }          
     </script>
-    <body onload="gfg_Run()">
+    <body onload="generate_trace()">
 </body>  
   
 </html>
